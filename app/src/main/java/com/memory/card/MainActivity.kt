@@ -13,7 +13,7 @@ import com.memory.card.component.AppNavHost
 import dagger.hilt.android.AndroidEntryPoint
 import memory.card.core.ui.theme.MemoryCardTheme
 import memory.card.navigation.navigator.rememberNavigator
-import memory.card.navigation.route.CardListRoute
+import memory.card.navigation.route.GroupRoute
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MemoryCardTheme {
-                val navigator = rememberNavigator(CardListRoute)
+                val navigator = rememberNavigator(GroupRoute())
 
                 AppNavHost(
                     navigator,

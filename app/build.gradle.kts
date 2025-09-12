@@ -71,5 +71,6 @@ dependencies {
     implementation(project(":core:navigation"))
 
     implementation(project(":feature:card"))
+    implementation(project(":feature:card:data"))
 }
 

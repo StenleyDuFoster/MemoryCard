@@ -1,4 +1,4 @@
-package memory.card.core.data
+package memory.card.core.data.di
 
 import android.content.Context
 import coil.ImageLoader
@@ -14,15 +14,14 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.Interceptor
+import okhttp3.OkHttpClient
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class DiRemoteSingletonModule {
+internal object DiRemoteSingletonModule {
 
-    companion object {
-        private const val IMAGE_CACHE_DIR = "image_cache"
-    }
+    private const val IMAGE_CACHE_DIR = "image_cache"
 
     @Provides
     @Singleton
@@ -51,7 +50,7 @@ class DiRemoteSingletonModule {
     ): ImageLoader =
         ImageLoader.Builder(application)
             .callFactory {
-                okhttp3.OkHttpClient.Builder()
+                OkHttpClient.Builder()
                     .addInterceptor(chuckerInterceptor)
                     .addInterceptor(Interceptor { chain ->
                         chain.proceed(

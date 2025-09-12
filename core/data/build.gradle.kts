@@ -41,12 +41,14 @@ dependencies {
     implementation(libs.bundles.coil)
     implementation(libs.bundles.hilt)
 
+    implementation(libs.androidx.appcompat)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.data.store)
     releaseImplementation(libs.chucker.no.op)
     debugImplementation(libs.chucker)
 
     ksp(libs.hilt.compiler)
+    ksp(libs.room.ksp)
 
     implementation(project(":core:domain"))
 }

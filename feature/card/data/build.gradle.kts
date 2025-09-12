@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.hilt.plugin)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -33,6 +35,13 @@ android {
 }
 
 dependencies {
+    implementation(libs.bundles.hilt)
+
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.coroutines)
+
+    ksp(libs.hilt.compiler)
+
     implementation(project(":core:data"))
     implementation(project(":feature:card:domain"))
 }

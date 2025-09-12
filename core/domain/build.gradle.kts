@@ -39,6 +39,7 @@ dependencies {
     implementation(libs.bundles.hilt)
 
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.coroutines)
 
     ksp(libs.hilt.compiler)
 }

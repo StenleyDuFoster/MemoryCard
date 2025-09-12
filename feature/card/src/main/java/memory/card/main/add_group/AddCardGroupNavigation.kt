@@ -1,12 +1,9 @@
 package memory.card.main.add_group
 
-import androidx.navigation3.runtime.EntryProviderBuilder
-import androidx.navigation3.runtime.entry
+import androidx.compose.runtime.Composable
 import memory.card.navigation.route.AddCardGroupRoute
-import memory.card.navigation.route.BaseRoute
 
-fun EntryProviderBuilder<BaseRoute>.addCardGroupScreen() {
-    entry<AddCardGroupRoute> { entry ->
-        AddCardGroupScreen()
-    }
+@Composable
+fun AddCardGroupRoute.addCardGroupScreen() {
+    AddCardGroupScreen()
 }
